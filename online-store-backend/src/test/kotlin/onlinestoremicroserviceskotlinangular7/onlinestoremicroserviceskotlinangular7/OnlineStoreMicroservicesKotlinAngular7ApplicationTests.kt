@@ -1,0 +1,17 @@
+package onlinestoremicroserviceskotlinangular7.onlinestoremicroserviceskotlinangular7
+
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.junit4.SpringRunner
+
+@RunWith(SpringRunner::class)
+@SpringBootTest
+class OnlineStoreMicroservicesKotlinAngular7ApplicationTests {
+
+	@Test
+	fun contextLoads() {
+	}
+
+}
+
