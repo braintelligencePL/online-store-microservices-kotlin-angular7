@@ -22,6 +22,12 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'docker'
 apply plugin: 'application'
 
+group = 'pl.braintelligence'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+mainClassName = "Application.kt"
+
 
 repositories {
     mavenCentral()
@@ -35,24 +41,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect"
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-compileJava {
-    group = 'pl.braintelligence'
-    version = '0.0.1-SNAPSHOT'
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
-    mainClassName = "pl/braintelligence/discovery/eureka/server/Application.kt"
-}
-
-jar {
-    baseName = "api-films"
-    group = "com.hudsonmendes"
-    version = "0.0.1-SNAPSHOT"
-}
-
-docker {
-    baseImage "openjdk:8-jdk-alpine"
 }
 
 dependencyManagement {
