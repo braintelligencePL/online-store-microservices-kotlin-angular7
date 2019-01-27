@@ -1,0 +1,7 @@
+version: '3'
+
+services: 
+  discovery-registration-service:
+    image: pl.braintelligence/discovery-registration-service
+    ports:
+      - 8761:8761
