@@ -8,6 +8,6 @@ cd infrastructure/discovery-eureka-server && ./gradlew clean build buildDocker &
 
 
 ## application backend ##
-cd online-store-backend && ./gradlew clean build distDocker && cd ..
+cd online-store-backend && ./gradlew clean build buildDocker && cd ..
 
 

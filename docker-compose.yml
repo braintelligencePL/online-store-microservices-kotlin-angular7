@@ -5,3 +5,8 @@ services:
     image: pl.braintelligence/discovery-eureka-server:latest
     ports:
       - 8761:8761
+
+  online-store-backend:
+    image: pl.braintelligence/online-store-backend:latest
+    ports:
+      - 8080:8080
