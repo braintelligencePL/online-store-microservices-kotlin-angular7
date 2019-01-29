@@ -1,7 +1,7 @@
 version: '3'
 
 services: 
-  discovery-registration-service:
-    image: pl.braintelligence/discovery-registration-service
+  discovery-eureka-server:
+    image: pl.braintelligence/discovery-eureka-server:latest
     ports:
       - 8761:8761
