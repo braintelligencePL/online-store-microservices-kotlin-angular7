@@ -44,8 +44,6 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
     
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
-    testImplementation('org.springframework.cloud:spring-cloud-starter-eureka-server')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 }
