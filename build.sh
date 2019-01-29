@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -e # if something breaks stop the script
+set -e # if something breaks stop the script (not always good thing)
 
 
 ## infrastructure stuff ##

@@ -10,9 +10,7 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
-        classpath("spring-cloud-starter-netflix-eureka-client")
         classpath("se.transmode.gradle:gradle-docker:1.2")
-        classpath("com.fasterxml.jackson.module:jackson-module-kotlin")
     }
 }
 
@@ -33,19 +31,21 @@ sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spring.io/milestone' }
 }
 
 ext {
-    set('springCloudVersion', 'Greenwich.RELEASE')
+    set('springCloudVersion', 'Finchley.SR2')
 }
 
 dependencies {
+    implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.cloud:spring-cloud-config-client'
+    implementation('org.springframework.boot:spring-boot-starter-web')
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.springframework.cloud:spring-cloud-starter-eureka-server')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 }

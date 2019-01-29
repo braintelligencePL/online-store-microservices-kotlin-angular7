@@ -34,8 +34,9 @@ repositories {
     maven { url 'https://repo.spring.io/milestone' }
 }
 
+
 ext {
-    set('springCloudVersion', 'Greenwich.RELEASE')
+    set('springCloudVersion', 'Finchley.SR2')
 }
 
 dependencies {
