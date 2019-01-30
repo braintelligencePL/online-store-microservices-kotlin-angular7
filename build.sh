@@ -2,9 +2,8 @@
 
 set -e # if something breaks stop the script (not always good thing)
 
-
 ## infrastructure stuff ##
-cd infrastructure/discovery-eureka-server && ./gradlew clean build buildDocker && cd ../..
+cd infrastructure/spring-cloud-zoo && ./gradlew clean build buildDocker && cd ../..
 
 
 ## application backend ##
