@@ -1,0 +1,62 @@
+buildscript {
+    ext {
+        kotlinVersion = '1.2.71'
+        springBootVersion = '2.1.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+        classpath("se.transmode.gradle:gradle-docker:1.2")
+    }
+}
+
+
+subprojects {
+
+    apply plugin: 'idea'
+    apply plugin: 'docker'
+    apply plugin: 'kotlin'
+    apply plugin: 'kotlin-spring'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    repositories {
+        mavenCentral()
+    }
+
+    group = 'pl.braintelligence'
+    sourceCompatibility = '1.8'
+
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+        implementation "org.jetbrains.kotlin:kotlin-reflect"
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Finchley.SR2"
+        }
+    }
+
+    task buildDocker(type: Docker, dependsOn: build) {
+        push = false
+        applicationName = jar.baseName
+        dockerfile = file('src/main/docker/Dockerfile')
+        doFirst {
+            copy {
+                from jar
+                into stageDir
+            }
+        }
+    }
+}
+
+project(':discovery-eureka-server') {
+    dependencies {
+        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+    }
+}
