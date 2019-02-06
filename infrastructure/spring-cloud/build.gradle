@@ -34,6 +34,10 @@ subprojects {
     dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
         implementation "org.jetbrains.kotlin:kotlin-reflect"
+
+        // for jdk-12 to work
+        implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '2.2.11'
+
     }
 
     dependencyManagement {
@@ -59,4 +63,9 @@ project(':discovery-eureka-server') {
     dependencies {
         implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
     }
+}
+
+// disable building /build folder in root project
+gradle.buildFinished {
+    project.buildDir.deleteDir()
 }

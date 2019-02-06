@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:12-jdk-alpine
 VOLUME /tmp
 ADD discovery-eureka-server.jar app.jar
 RUN sh -c 'touch /app.jar'
