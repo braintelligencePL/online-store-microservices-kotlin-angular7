@@ -6,6 +6,8 @@
       <module name="com.example.discovery-eureka-server.test" target="11" />
       <module name="com.example.spring-cloud.main" target="1.8" />
       <module name="com.example.spring-cloud.test" target="1.8" />
+      <module name="pl.braintelligence.centralized-configuration-server.main" target="1.8" />
+      <module name="pl.braintelligence.centralized-configuration-server.test" target="1.8" />
       <module name="pl.braintelligence.discovery-eureka-server.main" target="1.8" />
       <module name="pl.braintelligence.discovery-eureka-server.test" target="1.8" />
       <module name="pl.braintelligence.project1.main" target="11" />

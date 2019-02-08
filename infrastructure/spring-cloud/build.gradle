@@ -37,7 +37,6 @@ subprojects {
 
         // for jdk-12 to work
         implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '2.2.11'
-
     }
 
     dependencyManagement {
@@ -62,6 +61,12 @@ subprojects {
 project(':discovery-eureka-server') {
     dependencies {
         implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+    }
+}
+
+project(':centralized-configuration-server') {
+    dependencies {
+        implementation 'org.springframework.cloud:spring-cloud-config-server'
     }
 }
 

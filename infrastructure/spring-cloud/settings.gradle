@@ -1,1 +1,2 @@
 include 'discovery-eureka-server'
+include 'centralized-configuration-server'

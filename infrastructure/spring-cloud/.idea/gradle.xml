@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/centralized-configuration-server" />
             <option value="$PROJECT_DIR$/discovery-eureka-server" />
           </set>
         </option>
