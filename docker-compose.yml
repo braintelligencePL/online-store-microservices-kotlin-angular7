@@ -6,8 +6,8 @@ services:
     ports:
       - 8761:8761
   
-  discovery-eureka-server:
-    image: pl.braintelligence/discovery-eureka-server:latest
+  centralized-configuration-server:
+    image: pl.braintelligence/centralized-configuration-server:latest
     ports:
       - 8888:8888
 
