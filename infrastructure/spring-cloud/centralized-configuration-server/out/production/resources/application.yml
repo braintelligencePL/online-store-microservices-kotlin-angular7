@@ -8,5 +8,5 @@ spring:
       server:
         git:
           uri: https://github.com/braintelligencePL/online-store-config
-          username: braintelligencePL
-          password: mg6nnwpp1github
+          search-paths:
+            - 'config*'
