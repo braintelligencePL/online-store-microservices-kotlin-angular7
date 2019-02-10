@@ -1,8 +1,27 @@
 ---
+# class-path configuration example
 server:
   port: 8888
 
 spring:
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        git:
+          search-paths:
+            - 'config*'
+
+
+---
+# git-based configuration example
+server:
+  port: 8888
+
+spring:
+  profiles:
+    active: github
   cloud:
     config:
       server:
@@ -10,5 +29,3 @@ spring:
           uri: https://github.com/braintelligencePL/online-store-config
           search-paths:
             - 'config*'
-  profiles:
-    active: native

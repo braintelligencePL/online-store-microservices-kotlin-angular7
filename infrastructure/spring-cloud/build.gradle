@@ -7,13 +7,12 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
-        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
-        classpath("se.transmode.gradle:gradle-docker:1.2")
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion"
+        classpath "se.transmode.gradle:gradle-docker:1.2"
     }
 }
-
 
 subprojects {
 
@@ -71,7 +70,7 @@ project(':centralized-configuration-server') {
     }
 }
 
-// disable building /build folder in root project
+// remove /build folder in root project
 gradle.buildFinished {
     project.buildDir.deleteDir()
 }

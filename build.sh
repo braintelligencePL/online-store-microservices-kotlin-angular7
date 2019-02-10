@@ -8,4 +8,5 @@ cd infrastructure/spring-cloud && ./gradlew clean build buildDocker && cd ../..
 ## application backend ##
 cd online-store-backend && ./gradlew clean build buildDocker && cd ..
 
-
+## start all images ##
+docker-compose up
