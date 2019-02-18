@@ -2,6 +2,7 @@ buildscript {
     ext {
         kotlinVersion = '1.2.71'
         springBootVersion = '2.1.2.RELEASE'
+        gradleDocker = '1.2'
     }
     repositories {
         mavenCentral()
@@ -10,7 +11,7 @@ buildscript {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion"
-        classpath "se.transmode.gradle:gradle-docker:1.2"
+        classpath "se.transmode.gradle:gradle-docker:$gradleDocker"
     }
 }
 
@@ -35,8 +36,10 @@ subprojects {
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
         implementation "org.jetbrains.kotlin:kotlin-reflect"
 
-        // for jdk-12 to work
-        implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '2.2.11'
+        // for jdk-12 to work with Spring
+        implementation group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.3.0.1'
+        implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+        implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.3.2'
     }
 
     dependencyManagement {
