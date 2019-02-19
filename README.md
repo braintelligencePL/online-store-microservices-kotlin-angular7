@@ -11,19 +11,19 @@
 ## Requirements: 
 * minikube, docker, docker-compose, kubectl, intelliJ-idea
 
-### ./infrastructure
+### `./infrastructure`
 * infrastructure/spring-cloud - config-server, discovery-server, gateway, edge-service (reversed proxy), load-balancer...
 * infrastructure/monitoring - actuator -> prometheus, grafana...
 
-### ./backend
+### `./backend`
 * /products-listing -
 * /shopping-card -
 * /payment - 
 * /shipping - 
 * /invoice - 
 
-### ./frontend
+### `./frontend`
 * angular 7
 
-### ./performance-tests
+### `./performance-tests`
 * gatling
