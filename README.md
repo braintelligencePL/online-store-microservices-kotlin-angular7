@@ -12,15 +12,15 @@
 * minikube, docker, docker-compose, kubectl, intelliJ-idea
 
 ### `./infrastructure`
-* infrastructure/spring-cloud - config-server, discovery-server, gateway, edge-service (reversed proxy), load-balancer...
-* infrastructure/monitoring - actuator -> prometheus, grafana...
+* `/spring-cloud` - config-server, discovery-server, gateway, edge-service (reversed proxy), load-balancer...
+* `/monitoring` - actuator -> prometheus, grafana...
 
 ### `./backend`
-* /products-listing -
-* /shopping-card -
-* /payment - 
-* /shipping - 
-* /invoice - 
+* `/products-listing` -
+* `/shopping-card` -
+* `/payment` - 
+* `/shipping` - 
+* `/invoice` - 
 
 ### `./frontend`
 * angular 7
