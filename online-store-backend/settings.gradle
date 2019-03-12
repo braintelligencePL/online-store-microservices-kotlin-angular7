@@ -1,1 +1,2 @@
-include 'products-listing'
+include 'product-store'
+include 'shared-kernel'
