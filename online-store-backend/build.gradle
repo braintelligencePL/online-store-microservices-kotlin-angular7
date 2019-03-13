@@ -61,8 +61,7 @@ subprojects {
         testCompile project(':shared-kernel')
 
     }
-
-    dependencyManagement {
+   dependencyManagement {
         imports {
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:Finchley.SR2"
         }

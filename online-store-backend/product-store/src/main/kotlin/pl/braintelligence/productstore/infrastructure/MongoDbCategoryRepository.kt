@@ -14,6 +14,10 @@ class MongoDbCategoryRepository(
         private val mongoTemplate: MongoTemplate
 ) : CategoryRepository {
 
+    override fun getAvailableCategories(): List<Category> {
+        TODO("List of categories")
+    }
+
     override fun save(category: Category) {
         mongoTemplate.save(category, CATEGORY_COLLECTION)
     }

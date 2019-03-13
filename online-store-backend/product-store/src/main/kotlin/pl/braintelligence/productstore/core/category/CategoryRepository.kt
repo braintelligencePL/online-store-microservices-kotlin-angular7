@@ -7,4 +7,5 @@ package pl.braintelligence.productstore.core.category
 interface CategoryRepository {
 
     fun save(category: Category)
+    fun getAvailableCategories(): List<Category>
 }

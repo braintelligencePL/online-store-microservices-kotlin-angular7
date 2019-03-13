@@ -5,9 +5,10 @@ import pl.braintelligence.productstore.core.product.Product
 import pl.braintelligence.sharedkernel.domain.exceptions.DomainException
 import java.util.*
 
-data class Category @JvmOverloads constructor(
+class Category @JvmOverloads constructor(
         private val id: String = UUID.randomUUID().toString(),
         private val name: String,
+        private val available: Boolean = true,
         private val products: Set<Product> = emptySet()
 ) {
 
