@@ -21,6 +21,5 @@ class CategoryController(
     fun getAvailableCategories(
             @RequestBody newCategoryDto: NewCategoryDto
     ) = productStore.createNewCategory(newCategoryDto)
-
-
 }
+
