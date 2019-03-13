@@ -1,6 +1,6 @@
 package pl.braintelligence.productstore.core.product
 
-import pl.braintelligence.sharedkernel.Money
+import pl.braintelligence.sharedkernel.domain.Money
 
 data class Product(
         val id: String,

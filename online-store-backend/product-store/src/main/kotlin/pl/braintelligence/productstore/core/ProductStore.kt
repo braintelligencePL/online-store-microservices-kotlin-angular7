@@ -1,13 +1,14 @@
 package pl.braintelligence.productstore.core
 
-import pl.braintelligence.productstore.core.catalog.Category
+import pl.braintelligence.productstore.application.NewCategoryDto
 
 /**
  * Primary Port
  */
 
-
 interface ProductStore {
 
-    fun getActiveCatalog(): Category
+    fun createNewCategory(newCategoryDto: NewCategoryDto)
+
+
 }

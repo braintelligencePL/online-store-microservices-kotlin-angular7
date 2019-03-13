@@ -27,25 +27,39 @@ subprojects {
 
     repositories {
         mavenCentral()
+        maven { url 'https://jitpack.io' } // for Spock 1.3
     }
 
     group = 'pl.braintelligence'
-    sourceCompatibility = '1.8'
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 
     dependencies {
         // Kotlin
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
         implementation "org.jetbrains.kotlin:kotlin-reflect"
+        implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+"
+
+        // Functional
+        implementation 'io.arrow-kt:arrow-core:0.8.2'
 
         // Spring
         implementation 'org.springframework.boot:spring-boot-starter-actuator'
         implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation "org.springframework.boot:spring-boot-starter-data-mongodb"
         implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
-        // for jdk-12 to work with Spring
-        implementation group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.3.0.1'
-        implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
-        implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.3.2'
+        // Tests
+        implementation 'org.spockframework.spock:spock-core:spock-1.3'
+        implementation 'org.spockframework.spock:spock-spring:spock-1.3'
+        implementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'com.github.tomakehurst:wiremock:2.21.0'
+        testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.2.0'
+
+        // commons, shared-kernel, generic code for all sub-projects
+        compile project(':shared-kernel')
+        testCompile project(':shared-kernel')
+
     }
 
     dependencyManagement {
@@ -66,7 +80,6 @@ subprojects {
         }
     }
 }
-
 
 // remove /build folder in root project
 gradle.buildFinished {
