@@ -1,4 +1,4 @@
-# Online Store
+# Online Store [WorkInProgress]
 
 ## Tech Stack:
 * Backend: Kotlin, spock
